@@ -1,35 +1,44 @@
 <?php
 if (!empty($_POST["registro"])) {
-    // Verificar que los campos solicitados sean rellenados
-    if (empty($_POST["id"]) or empty($_POST["nombre"]) or empty($_POST["apellido"]) or empty($_POST["email"]) or empty($_POST["direccion"]) or empty($_POST["telefono"]) or empty($_POST["password"])) {
-        echo "<span style = 'color: red'>Uno de los campos está vacío</span>";
+    if (empty($_POST["id"]) || empty($_POST["nombre"]) || empty($_POST["apellido"]) || empty($_POST["email"]) || empty($_POST["direccion"]) || empty($_POST["telefono"]) || empty($_POST["password"]) || empty($_POST["fechaNac"]) || empty($_POST["lugarNac"]) || empty($_POST["motivoVisita"]) || empty($_POST["observacionVisita"])) {
+        echo "<span class='text-center text-danger'>Uno de los campos está vacío</span>";
     } else {
-     // Variables que guardan los datos rellenados
-     
-     $id = $_POST["id"];
-     $nombre = $_POST["nombre"];
-     $apellido = $_POST["apellido"];
-     $email = $_POST["email"];
-     $direccion = $_POST["direccion"];
-     $telefono = $_POST["telefono"];
-     $estado = $_POST["estado"];
-     $cargo = $_POST["cargo"];
-     $password = $_POST["password"];
+        $id = $_POST["id"];
+        $nombre = $_POST["nombre"];
+        $apellido = $_POST["apellido"];
+        $email = $_POST["email"];
+        $direccion = $_POST["direccion"];
+        $telefono = $_POST["telefono"];
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT); 
+        $fechaNac = $_POST["fechaNac"];
+        $lugarNac = $_POST["lugarNac"];
+        $motivoVisita = $_POST["motivoVisita"];
+        $observacionVisita = $_POST["observacionVisita"];
 
-     // Insertarndo los datos a la base de datos
-     $sql=$conexion->query(" insert into usuarios(id, nombre, apellido, email, direccion, telefono, estado, password, cargo)values('$id','$nombre','$apellido','$email','$direccion','$telefono','$estado','$password', '$cargo')");
+        $validacion = $conexion->query("SELECT * FROM empleados WHERE correo = '$email' OR identificacion = '$id'");
 
-     if ($sql == 1) {
-        echo "
-        <div class='alert alert-success' role='alert'>
-            La acción se completó correctamente!
-        </div>
-        ";
-     } else {
-        echo "El usuario no se pudo registrar.";
-     }
-     
+        if ($validacion->num_rows > 0) {
+            $fila = $validacion->fetch_assoc();
+            if ($fila["correo"] == $email) {
+                echo "<span class='text-center text-danger'>El correo electrónico ya está en uso</span>";
+            } elseif ($fila["identificacion"] == $id) {
+                echo "<span class='text-center text-danger'>La identificación ya está en uso</span>";
+            }
+        } else {
+            $sql = $conexion->query("INSERT INTO empleados (identificacion, nombres, apellidos, correo, fecha_nac, lugar_nac, direccion, telefono, contrasena) VALUES ('$id', '$nombre', '$apellido', '$email', '$fechaNac', '$lugarNac', '$direccion', '$telefono', '$password')");
+
+            if ($sql) {
+                $sql2 = $conexion->query("INSERT INTO visita (id_usuario, motivo, observacion) VALUES ('$id', '$motivoVisita', '$observacionVisita')");
+
+                if ($sql2) {
+                    echo "<div class='alert alert-success' role='alert'>La acción se completó correctamente!</div>";
+                } else {
+                    echo "<span class='text-center text-danger'>Error al registrar la visita</span>";
+                }
+            } else {
+                echo "<span class='text-center text-danger'>El usuario no se pudo registrar</span>";
+            }
+        }
     }
-    
 }
 ?>

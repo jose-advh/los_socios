@@ -15,13 +15,13 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <article class="d-flex justify-content-center">
-            <form method="post" action="#" class="formulario_login d-flex flex-column gap-2">
-                <h1 class="text-center">Login - Los Socios</h1>
-                <label for="">Identificación</label>
+    <main class="d-flex justify-content-center aling-items-center" style="height: 60vh;"> 
+        <article class="wmedia d-flex bg-dark m-auto p-2 rounded justify-content-center">
+            <form method="post" action="#" class="formulario_login d-flex w-75 flex-column gap-2">
+                <h1 class="text-center text-light">Iniciar Sesión</h1>
+                <label for="" class="text-light">Identificación</label>
                 <input type="text" id="id_user" name="id_user" class="form-control">
-                <label for="">Contraseña</label>
+                <label for="" class="text-light">Contraseña</label>
                 <input type="password" id="input" name="password" class="form-control">
                 <span><a href="register.php">¿No tienes una cuenta?</a></span>
                 <input type="submit" class="btn btn-primary" name="btningresar" value="INICIAR SESIÓN">

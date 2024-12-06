@@ -1,28 +1,30 @@
 <?php
 session_start();
-include "../modelo/conexion.php"; 
+include "../modelo/conexion.php";
 
 if (!empty($_POST["btningresar"])) {
-    if (!empty($_POST["id_user"]) and !empty($_POST["password"])) {
+    if (!empty($_POST["id_user"]) && !empty($_POST["password"])) {
         $identificacion = $_POST["id_user"];
         $password = $_POST["password"];
-        $sql = $conexion->query("select * from usuarios where id = '$identificacion' and password = '$password'");
+
+        $sql = $conexion->query("SELECT * FROM empleados WHERE identificacion = '$identificacion'");
 
         if ($datos = $sql->fetch_object()) {
-            $_SESSION["id_user"] = $datos->Id;
-            $_SESSION["nombre"] = $datos->Nombre;
-            $_SESSION["apellido"] = $datos->Apellido;
-            $_SESSION["cargo"] = $datos ->cargo;
-            header("location: joyas.php");
-            echo "Compra exitosa";
-        } else {
-            echo "<div class=alert alert-danger>Acceso denegado</div>";
-        }
+            if (password_verify($password, $datos->contrasena)) {
+                $_SESSION["id_user"] = $datos->identificacion;
+                $_SESSION["nombre"] = $datos->nombres;
+                $_SESSION["apellido"] = $datos->apellidos;
 
+                header("location: panel.php");
+                exit();
+            } else {
+                echo "<div class='alert alert-danger'>Contraseña incorrecta</div>";
+            }
+        } else {
+            echo "<div class='alert alert-danger'>Usuario no encontrado</div>";
+        }
     } else {
-        echo "Campos vacios";
+        echo "<div class='alert alert-danger'>Por favor, rellene todos los campos</div>";
     }
 }
-
-
 ?>

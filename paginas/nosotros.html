@@ -1,148 +1,82 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOS SOCIOS</title>
+    <title>VirtuPro- Sobre Nosotros</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
 </head>
-<body class="body-principal">
-    <header class="header-principal">
-        <nav class="header_nav-principal position-fixed d-flex flex-column">
-            <ul class="nav_ul-principal d-flex gap-5 justify-content-center text-center mt-2">
-                <li><a href="../index.html">INICIO</a></li>
-                <li><a href="contacto.html">CONTACTO</a></li>
+<body class="body--nosotros">
+    <header class="header header--position">
+        <nav class="header__nav header__nav--fixed ">
+            <ul class="header__lista">
+                <li><a href="../index.html" class="header__item">VOLVER AL MENÚ</a></li>
+                <li><a href="../php/login.php" class="header__item header__button">INGRESAR</a></li>
+                <li><a href="../php/register.php" class="header__item">CREAR CUENTA</a></li>
             </ul>
         </nav>
     </header>
-    <main class="main-principal d-flex flex-column justify-content-center aling-items-center px-3 mb-5">
-            <section class="logo_nosotros m-auto">
-                <figure class="d-flex justify-content-center">
-                    <img src="../img/logos/logo_socios.png" class="w-100" alt="Logo oficial de Los Socios.">
-                </figure>
+    <main class="main">
+        <article class="main__informacion">
+            <section class="informacion__virtupro">
+                <article class="informacion__text">
+                    <h2 class="main__titulo--nosotros">Nosotros</h2>
+                    <p class="main__description">
+                        Somos una aplicación multiplataforma con el fin de capacitar a los empleados de la empresa, ofrecemos articulos relacionados a la Seguridad Laboral, también una evaluación con el fin de conocer el nivel de conocimiento del trabajador.
+                    </p>
+                </article>
+                <img src="../imgs/logo_virtupro.png" class="main__img" alt="Logo de virtupro">
             </section>
-            <article class="nosotros_main d-flex gap-3 w-75 m-auto">
-                <section class="informacion_nosotros d-flex flex-column w-50 p-4 mt-4">
-                    <h2>Nuestra Visión</h2>
-                    <p>
-                        En "Los Socios", nos dedicamos a ofrecer joyas de alta calidad que reflejen la elegancia y el estilo de nuestros clientes. Nuestro objetivo es combinar la tradición de la joyería fina con la comodidad del comercio electrónico moderno.
-                    </p>
-                </section>
+            <h2 class="main__titulo--nosotros">Equipo</h2>
+            <section class="informacion__desarrolladores">
+                <article class="desarrolladores__card">
+                    <section class="desarrolladores__contenido">
+                        <img src="../imgs/desarrolladores/jesus_paez.png" class="desarrolladores__img" alt="Desarrollador Jesús Páez">
+                    <h2 class="desarrolladores__nombre">Jesús Páez</h2>
 
-                <section class="informacion_nosotros d-flex flex-column w-50 p-4 mt-4">
-                    <h2>Compromiso con la Calidad</h2>
-                    <p>
-                        Cada pieza en nuestro catálogo es cuidadosamente seleccionada, garantizando los más altos estándares de calidad. Nos enorgullecemos de ofrecer joyas que no solo son hermosas, sino también duraderas y valiosas.
-                    </p>
-                </section>
-            </article> 
-            <h2 class="mt-4 display-4 text-center">EQUIPO DE TRABAJO</h2>
-            <article class="equipo_trabajo d-flex gap-3 aling-items-center justify-content-center mt-4 w-75 m-auto">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../img/equipo_trabajo/isaac.webp" alt="Card image cap">
-                    <div class="card-body">
-                        <h2 class="text-center">ISAAC BOLAÑO</h2>
-                    </div>
-                  </div>
+                        <article class="desarrolladores__etiquetas">
+                            <button class="etiquetas">Desarrollador</button>
+                        </article>
+                    </section>
+                </article>
 
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../img/equipo_trabajo/alexander.webp" alt="Card image cap">
-                    <div class="card-body">
-                        <h2 class="text-center">ALEXANDER BACCA</h2>
-                    </div>
-                  </div>
+                <article class="desarrolladores__card">
+                    <section class="desarrolladores__contenido">
+                        <img src="../imgs/desarrolladores/isaac.png" class="desarrolladores__img" alt="Desarrollador Isaac Bolaños">
+                    <h2 class="desarrolladores__nombre">Isaac Bolaños</h2>
 
-                  
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../img/equipo_trabajo/juan.webp" alt="Card image cap">
-                    <div class="card-body">
-                        <h2 class="text-center">JUAN DONADO</h2>
-                    </div>
-                  </div>
-            </article>
+                        <article class="desarrolladores__etiquetas">
+                            <button class="etiquetas">Desarrollador</button>
+                        </article>
+                    </section>
+                </article>
 
-            <article class="equipo_trabajo d-flex gap-3 aling-items-center justify-content-center mt-4 w-75 m-auto">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../img/equipo_trabajo/rodolfo.webp" alt="Card image cap">
-                    <div class="card-body">
-                        <h2 class="text-center">JESÚS PAEZ</h2>
-                    </div>
-                  </div>
+                
+                <article class="desarrolladores__card">
+                    <section class="desarrolladores__contenido">
+                        <img src="../imgs/desarrolladores/carlos.webp" class="desarrolladores__img" alt="Desarrollador Carlos de la Cruz">
+                    <h2 class="desarrolladores__nombre">Carlos de la Cruz</h2>
 
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../img/equipo_trabajo/alfonso.webp" alt="Card image cap">
-                    <div class="card-body">
-                        <h2 class="text-center">ALFONSO AMELL</h2>
-                    </div>
-                  </div>
+                        <article class="desarrolladores__etiquetas">
+                            <button class="etiquetas">Desarrollador</button>
+                        </article>
+                    </section>
+                </article>
 
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../img/equipo_trabajo/carlos.webp" alt="Card image cap">
-                    <div class="card-body">
-                        <h2 class="text-center">CARLOS DE LA CRUZ</h2>
-                    </div>
-                  </div>
-            </article>
+                
+                <article class="desarrolladores__card">
+                    <section class="desarrolladores__contenido">
+                        <img src="../imgs/desarrolladores/juan.png" class="desarrolladores__img" alt="Desarrollador Juan Donado">
+                    <h2 class="desarrolladores__nombre">Juan Donado</h2>
+
+                        <article class="desarrolladores__etiquetas">
+                            <button class="etiquetas">Desarrollador</button>
+                        </article>
+                    </section>
+                </article>
+            </section>
+        </article>
     </main>
-
-    <footer class="footer mt-5 py-5">
-        <hr>
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <h5>Los Socios Joyería</h5>
-                    <p>Ofreciendo joyas de alta calidad desde 1990. Nuestra pasión es hacer brillar tus momentos especiales.</p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>Enlaces Rápidos</h5>
-                    <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>Contacto</h5>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Barranquilla</li>
-                        <li><i class="fas fa-phone"></i> +57 123 456 789</li>
-                        <li><i class="fas fa-envelope"></i> info@lossocios.com</li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>Suscríbete</h5>
-                    <p>Recibe nuestras últimas novedades y ofertas exclusivas.</p>
-                    <form>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Tu email" aria-label="Tu email" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-light" type="button" id="button-addon2">Suscribir</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <ul class="list-inline text-md-end">
-                        <li class="list-inline-item"><a href="#">Política de Privacidad</a></li>
-                        <li class="list-inline-item"><a href="#">Términos de Uso</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="copyright text-center">
-      <div class="container">
-          <p class="mb-0">&copy; 2024 Los Socios Joyería. Todos los derechos reservados.</p>
-      </div>
-    </div>
+    <footer class="footer"></footer>
 </body>
 </html>
