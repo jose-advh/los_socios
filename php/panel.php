@@ -18,7 +18,7 @@ session_start();
 <header class="header-principal ">
     <nav class="header_nav-principal  d-flex flex-column">
         <div class="header_info-principal d-flex justify-content-between px-4 aling-items-center py-3">
-            <a href="#" class="bg-warning py-2 px-3 rounded text-light" style="text-decoration: none;">Evaluación</a>
+            <a href="./evaluacion.php" class="bg-warning py-2 px-3 rounded text-light" style="text-decoration: none;">Evaluación</a>
             <a href="../controladores/controlador_cerrar_sesion.php" class="btn btn-danger">Cerrar Sesión</a>
         </div>
     </nav>
