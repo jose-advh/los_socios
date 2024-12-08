@@ -1,10 +1,9 @@
 <?php
-include "conexion.php"; // Conexión a la base de datos
+include "conexion.php"; 
 
 header('Content-Type: application/json');
 
 try {
-    // Conexión a la base de datos
     $stmt = $conexion->prepare("
         SELECT 
             p.id AS id_pregunta, 
@@ -19,11 +18,9 @@ try {
 
     $preguntas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Mezclar preguntas y limitar a 10
     shuffle($preguntas);
     $preguntasSeleccionadas = array_slice($preguntas, 0, 10);
 
-    // Procesar opciones para convertir en array
     foreach ($preguntasSeleccionadas as &$pregunta) {
         $pregunta['opciones'] = explode(',', $pregunta['opciones']);
     }

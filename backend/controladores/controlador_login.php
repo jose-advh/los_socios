@@ -1,6 +1,7 @@
 <?php
 session_start();
-include "../modelo/conexion.php";
+include __DIR__ . '/../modelo/conexion.php';
+
 
 if (!empty($_POST["btningresar"])) {
     if (!empty($_POST["id_user"]) && !empty($_POST["password"])) {
